@@ -317,7 +317,8 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jTree1FocusGained
 
     private void jTree1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTree1MousePressed
-          file = (File) jTree1.getLastSelectedPathComponent();
+        System.out.println("NOTA: Si desea manipular el archivo txt, cancele y de clic derecho");  
+        file = (File) jTree1.getLastSelectedPathComponent();
     
     if (evt.getButton() == MouseEvent.BUTTON1 && file != null && file.exists() && file.isFile() && file.getName().endsWith(".txt")) {
         String ruta = file.getAbsolutePath();
@@ -340,7 +341,7 @@ public class Main extends javax.swing.JFrame {
         jTextArea1.setText(fileInfo);
 
         String texto = JOptionPane.showInputDialog(null, "Escriba el texto que desea agregar al archivo:", "Texto para el archivo", JOptionPane.PLAIN_MESSAGE);
-
+        
         if (texto != null) {
             try {
                 FileWriter writer = new FileWriter(file.getAbsolutePath(), true);
